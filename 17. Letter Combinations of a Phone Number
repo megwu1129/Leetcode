@@ -35,3 +35,31 @@ class Solution:
                 for letter in mapping[int(d)]:
                     result.append(prev + letter)
         return result if digits else ''
+        
+        
+        
+# approach 3        
+class Solution:
+    dict_of_letters = {
+        '2': 'abc',
+        '3': 'def',
+        '4': 'ghi',
+        '5': 'jkl',
+        '6': 'mno',
+        '7': 'pqrs',
+        '8': 'tuv',
+        '9': 'wxyz'
+    }
+    def letterCombinations(self, digits: str):
+        if not digits:
+            return []
+        result = []
+        self.backtrack('', digits, result)
+        return result
+
+    def backtrack(self, combination, next_digits, result):
+        if len(next_digits) == 0:
+            result.append(combination)
+        else:
+            for letter in self.dict_of_letters[next_digits[0]]:
+                self.backtrack(combination + letter, next_digits[1:], result)
