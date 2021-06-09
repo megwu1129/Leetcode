@@ -21,3 +21,17 @@ class Solution:
   
         helper(0,[])
         return result
+        
+        
+# brute-force approach
+import collections
+class Solution:
+    def letterCombinations(self, digits: str):
+        mapping = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+        result = collections.deque([''])
+        for d in digits:
+            for _ in range(len(result)):
+                prev = result.popleft()
+                for letter in mapping[int(d)]:
+                    result.append(prev + letter)
+        return result if digits else ''
