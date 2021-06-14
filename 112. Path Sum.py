@@ -8,7 +8,7 @@ class Solution:
             if node.left is None and node.right is None:
                 if node.val == target:
                     result[0] = True
-                    return
+                return
             if node.left is not None:
                 dfs(node.left, target-node.val)
             if node.right is not None:
