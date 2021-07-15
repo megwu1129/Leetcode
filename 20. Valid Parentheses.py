@@ -2,7 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
         for ele in s:
-            if ele == '(' or ele == '{' or ele == '[':
+            if ele == '(' or ele == '{' or ele == '[': # if ele in ['(', '[', '{']
                 stack.append(ele)
             else:
                 if len(stack) ==0: # only ) or ] or }
