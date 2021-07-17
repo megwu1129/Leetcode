@@ -21,7 +21,7 @@ class Solution:
         slow = fast = head
         for i in range(n):
             fast = fast.next
-        if fast is None:
+        if fast is None: # if we are delecting head
             return head.next
         while fast.next is not None:
             slow = slow.next
