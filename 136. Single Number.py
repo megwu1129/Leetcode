@@ -1,3 +1,4 @@
+# Hash table
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         if len(nums) == 1:
@@ -12,3 +13,10 @@ class Solution:
         for ele in dict1:
             if dict1[ele] == 1:
                 return ele
+   
+
+
+# Math
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        
